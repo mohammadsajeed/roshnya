@@ -124,7 +124,7 @@
             <div class="container">
               <nav id="menuzord" class="menuzord orange bg-light">
                 <ul class="menuzord-menu">
-                  <li class="active"><a href="#home">Home</a>
+                  <li class="active"><a href="/about">Home</a>
                     <ul class="dropdown">
                       <li><a href="#">Multipage Layout</a>
                         <ul class="dropdown">
@@ -1234,10 +1234,11 @@
         </div>
       </header>
 
+       <div>   <input type='text'  wire:model="name"> </div>
       <!-- Start main-content -->
       <div class="main-content">
         <!-- Section: home -->
-        <section id="home" class="divider">
+        {{-- <section id="home" class="divider">
           <div class="container-fluid p-0">
 
             <!-- Slider Revolution Start -->
@@ -2639,7 +2640,11 @@
               </div>
             </div>
           </div>
-        </section>
+        </section> --}}
+
+        @section('body')
+
+        @show
       </div>
       <!-- end main-content -->
 

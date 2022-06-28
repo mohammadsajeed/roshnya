@@ -1,6 +1,6 @@
-
 <!DOCTYPE html>
-<html lang="en">
+<html dir="ltr" lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,19 +13,20 @@
     <meta name="robots" content="noindex,nofollow">
     <title>Roshanya</title>
     <!-- Favicon icon -->
-    {{-- <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png"> --}}
+    <link rel="icon" type="image/png" sizes="16x16" href="{{asset('assets/images/favicon.png')}}">
     <!-- Custom CSS -->
-    <link href="dist/css/style.min.css" rel="stylesheet">
+    <link href="{{asset('dist/css/style.min.css')}}" rel="stylesheet">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>-->
+    <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <script src="{{asset('js/app.js')}}"></script>
-
+<![endif]-->
+@livewireStyles
 </head>
+
 <body>
-     <!-- ============================================================== -->
+    <!-- ============================================================== -->
     <!-- Preloader - style you can find in spinners.css -->
     <!-- ============================================================== -->
     <div class="preloader">
@@ -54,15 +55,14 @@
                         <b class="logo-icon ps-2">
                             <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                             <!-- Dark Logo icon -->
-                            {{-- <img src="assets/images/logo-icon.png" alt="homepage" class="light-logo" /> --}}
-                            Rsohanya logo
+                            <img src="assets/images/logo-icon.png" alt="homepage" class="light-logo" />
 
                         </b>
                         <!--End Logo icon -->
                         <!-- Logo text -->
                         <span class="logo-text">
                             <!-- dark Logo text -->
-                            {{-- <img src="assets/images/logo-text.png" alt="homepage" class="light-logo" /> --}}
+                            <img src="assets/images/logo-text.png" alt="homepage" class="light-logo" />
 
                         </span>
                         <!-- Logo icon -->
@@ -250,13 +250,13 @@
                 <nav class="sidebar-nav">
                     <ul id="sidebarnav" class="pt-4">
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="/slider" aria-expanded="false"><i class=" fas fa-camera"></i><span
-                                    class="hide-menu"> Slider Managment</span></a></li>
+                                href="slider" aria-expanded="false"><i class="mdi mdi-view-dashboard"></i><span
+                                    class="hide-menu">slider</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="/jobs" aria-expanded="false"><i class="mdi mdi-chart-bar"></i><span
-                                    class="hide-menu">jobs</span></a></li>
+                                href="charts.html" aria-expanded="false"><i class="mdi mdi-chart-bar"></i><span
+                                    class="hide-menu">Charts</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
-                                href="/test" aria-expanded="false"><i class="mdi mdi-chart-bubble"></i><span
+                                href="widgets.html" aria-expanded="false"><i class="mdi mdi-chart-bubble"></i><span
                                     class="hide-menu">Widgets</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link"
                                 href="tables.html" aria-expanded="false"><i class="mdi mdi-border-inside"></i><span
@@ -345,7 +345,9 @@
                                         </span></a></li>
                             </ul>
                         </li>
-
+                        <li class="sidebar-item p-3">
+                            <a href="https://github.com/wrappixel/matrix-admin-bt5" target="_blank" class="w-100 btn btn-cyan d-flex align-items-center text-white"><i class="mdi mdi-cloud-download font-20 me-2"></i>Download Free</a>
+                        </li>
                     </ul>
                 </nav>
                 <!-- End Sidebar navigation -->
@@ -365,7 +367,7 @@
             <div class="page-breadcrumb">
                 <div class="row">
                     <div class="col-12 d-flex no-block align-items-center">
-                        <h4 class="page-title"></h4>
+
                         <div class="ms-auto text-end">
                             <nav aria-label="breadcrumb">
                                 <ol class="breadcrumb">
@@ -384,11 +386,20 @@
             <!-- Container fluid  -->
             <!-- ============================================================== -->
             <div class="container-fluid">
-
-                @section('body')
-
-                @show
-
+                <!-- ============================================================== -->
+                <!-- Start Page Content -->
+                <!-- ============================================================== -->
+                {{$slot}}
+                <!-- ============================================================== -->
+                <!-- End PAge Content -->
+                <!-- ============================================================== -->
+                <!-- ============================================================== -->
+                <!-- Right sidebar -->
+                <!-- ============================================================== -->
+                <!-- .right-sidebar -->
+                <!-- ============================================================== -->
+                <!-- End Right sidebar -->
+                <!-- ============================================================== -->
             </div>
             <!-- ============================================================== -->
             <!-- End Container fluid  -->
@@ -397,8 +408,8 @@
             <!-- footer -->
             <!-- ============================================================== -->
             <footer class="footer text-center">
-                All Rights Reserved by Mohammad Sajeed habibi. Designed and Developed by <a
-                    href="sajeedhabibi.me">Z-Tech</a>.
+                All Rights Reserved by Matrix-admin. Designed and Developed by <a
+                    href="https://www.wrappixel.com">WrapPixel</a>.
             </footer>
             <!-- ============================================================== -->
             <!-- End footer -->
@@ -414,25 +425,19 @@
     <!-- ============================================================== -->
     <!-- All Jquery -->
     <!-- ============================================================== -->
-
-
-
-    <script src="https://cdn.jsdelivr.net/gh/livewire/turbolinks@v0.1.x/dist/livewire-turbolinks.js" data-turbolinks-eval="false" data-turbo-eval="false"></script>
-    <script src="assets/libs/jquery/dist/jquery.min.js"></script>
+    <script src="{{asset('assets/libs/jquery/dist/jquery.min.js')}}"></script>
     <!-- Bootstrap tether Core JavaScript -->
-    <script src="assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{asset('assets/libs/bootstrap/dist/js/bootstrap.bundle.min.js')}}"></script>
     <!-- slimscrollbar scrollbar JavaScript -->
-    <script src="assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js"></script>
-    <script src="assets/extra-libs/sparkline/sparkline.js"></script>
+    <script src="{{asset('assets/libs/perfect-scrollbar/dist/perfect-scrollbar.jquery.min.js')}}"></script>
+    <script src="{{asset('assets/extra-libs/sparkline/sparkline.js')}}"></script>
     <!--Wave Effects -->
-    <script src="dist/js/waves.js"></script>
+    <script src="{{asset('dist/js/waves.js')}}"></script>
     <!--Menu sidebar -->
-    <script src="dist/js/sidebarmenu.js"></script>
+    <script src="{{asset('dist/js/sidebarmenu.js')}}"></script>
     <!--Custom JavaScript -->
-    <script src="dist/js/custom.min.js"></script>
-
+    <script src="{{asset('dist/js/custom.min.js')}}"></script>
+    @livewireScripts
 </body>
+
 </html>
-
-
-
