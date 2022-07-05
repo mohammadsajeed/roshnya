@@ -68,7 +68,7 @@
                         <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                         <!-- Dark Logo icon -->
                         <!-- <img src="assets/images/logo-text.png" alt="homepage" class="light-logo" /> -->
-
+                        Roshanya
                         <!-- </b> -->
                         <!--End Logo icon -->
                     </a>
@@ -250,6 +250,8 @@
                                     class="hide-menu">Slider Managment</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/news" aria-expanded="false"><i class="mdi mdi-newspaper"></i><span
                                     class="hide-menu">News Managment</span></a></li>
+                                    <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/project" aria-expanded="false"><i class="mdi mdi-projector-screen"></i><span
+                                        class="hide-menu">Projects Managment</span></a></li>
 
                     </ul>
                 </nav>

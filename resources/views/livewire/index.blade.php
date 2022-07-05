@@ -1234,7 +1234,7 @@
         </div>
       </header>
 
-       <div>   <input type='text'  wire:model="name"> </div>
+
       <!-- Start main-content -->
       <div class="main-content">
         <!-- Section: home -->

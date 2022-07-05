@@ -10,6 +10,7 @@ use App\Http\Livewire\Index;
 use App\Http\Livewire\Test;
 use App\Http\Controllers\SliderControler;
 use App\Http\Controllers\NewsController;
+use App\Http\Controllers\ProjectController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -32,12 +33,17 @@ use Illuminate\Support\Facades\Route;
 // // Route::get('/',Index::class)->middleware(['auth'])->name('dashboard');
 // // Route::get('/test',Test::class)->middleware(['auth'])->name('dashboard');
 // Route::get('/about',About::class)->middleware(['auth'])->name('dashboard');
- Route::get('/index',FrontendHome::class);
+ Route::get('/',FrontendHome::class);
 
 Route::get('/slider',[SliderControler::class,'index']);
 Route::post('add_slider',[SliderControler::class,'add_slider']);
 Route::get('slider_delete/{id}',[SliderControler::class,'slider_delete']);
 Route::get('/news',[NewsController::class,'index']);
+Route::post('/add_news',[NewsController::class,'add_news']);
+Route::get('/news_delete/{id}',[NewsController::class,'news_delete']);
+Route::get('/project',[ProjectController::class,'index']);
+Route::post('/add_project',[ProjectController::class,'add_project']);
+Route::get('/project_delete/{id}',[ProjectController::class,'project_delete']);
 
 
 // Route::get('/dashboard', function () {

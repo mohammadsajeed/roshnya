@@ -117,7 +117,7 @@
     </div>
     <div id="disable-preloader" class="btn btn-default btn-sm">Disable Preloader</div>
   </div>
-
+   <div id="google_element"></div>
   <!-- Header -->
   <header class="header">
     <div class="header-top bg-theme-colored sm-text-center">
@@ -1275,6 +1275,13 @@
 <script type="text/javascript" src="js/revolution-slider/js/extensions/revolution.extension.parallax.min.js"></script>
 <script type="text/javascript" src="js/revolution-slider/js/extensions/revolution.extension.slideanims.min.js"></script>
 <script type="text/javascript" src="js/revolution-slider/js/extensions/revolution.extension.video.min.js"></script>
+<script src="http:\\translate.google.com/translate_a/element.js?cb=loadGoogleTranslate"></script>
+<script>
+
+    function loadGoogleTranslate(){
+        new google.translate.TranslateElement("google_element")
+    }
+</script>
 @livewireScripts
 
 

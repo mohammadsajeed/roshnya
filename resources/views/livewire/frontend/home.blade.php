@@ -141,73 +141,30 @@
             <div class="col-sm-12 col-md-4 wow fadeInLeft animation-delay6">
               <h4 class="text-uppercase line-bottom mt-0">Featured Project</h4>
               <div class="featured-project-carousel owl-nav-top">
-                <div class="item">
-                  <div class="causes bg-lighter box-hover-effect effect1 sm-maxwidth500 mb-sm-30">
-                    <div class="thumb">
-                      <img class="img-fullwidth" alt="" src="images/photos/featured1.jpg">
-                    </div>
-                    <div class="progress-item mt-0">
-                      <div class="progress mb-0">
-                        <div class="progress-bar" data-percent="85"></div>
-                      </div>
-                    </div>
-                    <div class="causes-details clearfix border-bottom p-15 pt-10">
-                    <p class="mb-10 mt-5"><span class="text-uppercase text-theme-colored"><strong>Charity Hospital:</strong></span> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium quos aspernatur cupiditate commodi sunt illo.</p>
-                       <div class="donate-details">
-                         <a class="btn btn-dark btn-theme-colored btn-flat btn-sm pull-left mt-10" href="#">Donate</a>
-                         <ul class="pull-right list-inline mt-15">
-                           <li>Raised: $1890</li>
-                           <li>Goal: $2500</li>
-                         </ul>
-                       </div>
-                    </div>
+             @foreach ( $read_project as $project )
+             <div class="item">
+                <div class="causes bg-lighter box-hover-effect effect1 sm-maxwidth500 mb-sm-30">
+                  <div class="thumb">
+                    <img class="img-fullwidth" alt="" src="images/{{$project->pic}}">
                   </div>
-                </div>
-                <div class="item">
-                  <div class="causes bg-lighter box-hover-effect effect1 sm-maxwidth500 mb-sm-30">
-                    <div class="thumb">
-                      <img class="img-fullwidth" alt="" src="images/photos/featured1.jpg">
-                    </div>
-                    <div class="progress-item mt-0">
-                      <div class="progress mb-0">
-                        <div class="progress-bar" data-percent="85"></div>
-                      </div>
-                    </div>
-                    <div class="causes-details clearfix border-bottom p-15 pt-10">
-                    <p class="mb-10 mt-5"><span class="text-uppercase text-theme-colored"><strong>Charity Hospital:</strong></span> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium quos aspernatur cupiditate commodi sunt illo.</p>
-                       <div class="donate-details">
-                         <a class="btn btn-dark btn-theme-colored btn-flat btn-sm pull-left mt-10" href="#">Donate</a>
-                         <ul class="pull-right list-inline mt-15">
-                           <li>Raised: $1890</li>
-                           <li>Goal: $2500</li>
-                         </ul>
-                       </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="item">
-                  <div class="causes bg-lighter box-hover-effect effect1 sm-maxwidth500 mb-sm-30">
-                    <div class="thumb">
-                      <img class="img-fullwidth" alt="" src="images/photos/featured1.jpg">
-                    </div>
-                    <div class="progress-item mt-0">
-                      <div class="progress mb-0">
-                        <div class="progress-bar" data-percent="85"></div>
-                      </div>
-                    </div>
-                    <div class="causes-details clearfix border-bottom p-15 pt-10">
-                    <p class="mb-10 mt-5"><span class="text-uppercase text-theme-colored"><strong>Charity Hospital:</strong></span> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Praesentium quos aspernatur cupiditate commodi sunt illo.</p>
-                       <div class="donate-details">
-                         <a class="btn btn-dark btn-theme-colored btn-flat btn-sm pull-left mt-10" href="#">Donate</a>
-                         <ul class="pull-right list-inline mt-15">
-                           <li>Raised: $1890</li>
-                           <li>Goal: $2500</li>
-                         </ul>
-                       </div>
-                    </div>
+
+                  <div class="causes-details clearfix border-bottom p-15 pt-10">
+                  <p class="mb-10 mt-5"><span class="text-uppercase text-theme-colored"><strong> {{$project->title}}:</strong></span> {!! $project->description !!}</p>
+                     <div class="donate-details">
+                       <a class="btn btn-dark btn-theme-colored btn-flat btn-sm pull-left mt-10" href="#">Donate</a>
+                       <ul class="pull-right list-inline mt-15">
+                         <li>Raised: ${{$project->raised_money}}</li>
+                         <li>Goal: ${{$project->goal_money}}</li>
+                       </ul>
+                     </div>
                   </div>
                 </div>
               </div>
+             @endforeach
+
+
+              </div>
+
             </div>
             <div class="col-sm-12 col-md-4 wow fadeInUp animation-delay6">
               <h4 class="text-uppercase line-bottom mt-0">Became a Volunteer</h4>
@@ -1137,141 +1094,37 @@
           <div class="row">
             <div class="col-md-12">
               <div class="news-carousel owl-nav-top mb-sm-80" data-dots="true">
+                @foreach ( $read_news as $news )
                 <div class="item">
-                  <article class="post clearfix maxwidth600 mb-sm-30 wow fadeInRight" data-wow-delay=".2s">
-                    <div class="entry-header">
-                      <div class="post-thumb thumb"> <img src="images/blog/1.jpg" alt="" class="img-responsive img-fullwidth"> </div>
-                      <div class="entry-meta meta-absolute text-center pl-15 pr-15">
-                      <div class="display-table">
-                        <div class="display-table-cell">
-                          <ul>
-                            <li><a class="text-white" href="#"><i class="fa fa-thumbs-o-up"></i> 265 <br> Likes</a></li>
-                            <li class="mt-20"><a class="text-white" href="#"><i class="fa fa-comments-o"></i> 72 <br> comments</a></li>
-                          </ul>
+                    <article class="post clearfix maxwidth600 mb-sm-30 wow fadeInRight" data-wow-delay=".2s">
+                      <div class="entry-header">
+                        <div class="post-thumb thumb"> <img src="images/{{$news->pic}}" alt="" class="img-responsive img-fullwidth"> </div>
+                        {{-- <div class="entry-meta meta-absolute text-center pl-15 pr-15">
+                        <div class="display-table">
+                          <div class="display-table-cell">
+                            <ul>
+                              <li><a class="text-white" href="#"><i class="fa fa-thumbs-o-up"></i> 265 <br> Likes</a></li>
+                              <li class="mt-20"><a class="text-white" href="#"><i class="fa fa-comments-o"></i> 72 <br> comments</a></li>
+                            </ul>
+                          </div>
                         </div>
+                        </div> --}}
                       </div>
+                      <div class="entry-content border-1px p-20">
+                        <h5 class="entry-title mt-0 pt-0"><a href="#">{{$news->title}}</a></h5>
+                        <p class="text-left mb-20 mt-15 font-13">{!! $news->description!!}</p>
+                        <a class="btn btn-flat btn-dark btn-theme-colored btn-sm pull-left" href="news_details/{{$news->id}}">Read more</a>
+                        <ul class="list-inline entry-date pull-right font-12 mt-5">
+                          <li><a class="text-theme-colored" href="#">Admin |</a></li>
+                          <li><span class="text-theme-colored">{{$news->date}}</span></li>
+                        </ul>
+                        <div class="clearfix"></div>
                       </div>
-                    </div>
-                    <div class="entry-content border-1px p-20">
-                      <h5 class="entry-title mt-0 pt-0"><a href="#">Sponsor a child today</a></h5>
-                      <p class="text-left mb-20 mt-15 font-13">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
-                      <a class="btn btn-flat btn-dark btn-theme-colored btn-sm pull-left" href="#">Read more</a>
-                      <ul class="list-inline entry-date pull-right font-12 mt-5">
-                        <li><a class="text-theme-colored" href="#">Admin |</a></li>
-                        <li><span class="text-theme-colored">Nov 13, 2015</span></li>
-                      </ul>
-                      <div class="clearfix"></div>
-                    </div>
-                  </article>
-                </div>
-                <div class="item">
-                  <article class="post clearfix maxwidth600 mb-sm-30 wow fadeInRight" data-wow-delay=".4s">
-                    <div class="entry-header">
-                      <div class="post-thumb thumb"> <img src="images/blog/2.jpg" alt="" class="img-responsive img-fullwidth"> </div>
-                      <div class="entry-meta meta-absolute text-center pl-15 pr-15">
-                      <div class="display-table">
-                        <div class="display-table-cell">
-                          <ul>
-                            <li><a class="text-white" href="#"><i class="fa fa-thumbs-o-up"></i> 265 <br> Likes</a></li>
-                            <li class="mt-20"><a class="text-white" href="#"><i class="fa fa-comments-o"></i> 72 <br> comments</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                      </div>
-                    </div>
-                    <div class="entry-content border-1px p-20">
-                      <h5 class="entry-title mt-0 pt-0"><a href="#">Sponsor a child today</a></h5>
-                      <p class="text-left mb-20 mt-15 font-13">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
-                      <a class="btn btn-flat btn-dark btn-theme-colored btn-sm pull-left" href="#">Read more</a>
-                      <ul class="list-inline entry-date pull-right font-12 mt-5">
-                        <li><a class="text-theme-colored" href="#">Admin |</a></li>
-                        <li><span class="text-theme-colored">Nov 13, 2015</span></li>
-                      </ul>
-                      <div class="clearfix"></div>
-                    </div>
-                  </article>
-                </div>
-                <div class="item">
-                  <article class="post clearfix maxwidth600 mb-sm-30 wow fadeInRight" data-wow-delay=".6s">
-                    <div class="entry-header">
-                      <div class="post-thumb thumb"> <img src="images/blog/3.jpg" alt="" class="img-responsive img-fullwidth"> </div>
-                      <div class="entry-meta meta-absolute text-center pl-15 pr-15">
-                      <div class="display-table">
-                        <div class="display-table-cell">
-                          <ul>
-                            <li><a class="text-white" href="#"><i class="fa fa-thumbs-o-up"></i> 265 <br> Likes</a></li>
-                            <li class="mt-20"><a class="text-white" href="#"><i class="fa fa-comments-o"></i> 72 <br> comments</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                      </div>
-                    </div>
-                    <div class="entry-content border-1px p-20">
-                      <h5 class="entry-title mt-0 pt-0"><a href="#">Sponsor a child today</a></h5>
-                      <p class="text-left mb-20 mt-15 font-13">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
-                      <a class="btn btn-flat btn-dark btn-theme-colored btn-sm pull-left" href="#">Read more</a>
-                      <ul class="list-inline entry-date pull-right font-12 mt-5">
-                        <li><a class="text-theme-colored" href="#">Admin |</a></li>
-                        <li><span class="text-theme-colored">Nov 13, 2015</span></li>
-                      </ul>
-                      <div class="clearfix"></div>
-                    </div>
-                  </article>
-                </div>
-                <div class="item">
-                  <article class="post clearfix maxwidth600 mb-sm-30">
-                    <div class="entry-header">
-                      <div class="post-thumb thumb"> <img src="images/blog/2.jpg" alt="" class="img-responsive img-fullwidth"> </div>
-                      <div class="entry-meta meta-absolute text-center pl-15 pr-15">
-                      <div class="display-table">
-                        <div class="display-table-cell">
-                          <ul>
-                            <li><a class="text-white" href="#"><i class="fa fa-thumbs-o-up"></i> 265 <br> Likes</a></li>
-                            <li class="mt-20"><a class="text-white" href="#"><i class="fa fa-comments-o"></i> 72 <br> comments</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                      </div>
-                    </div>
-                    <div class="entry-content border-1px p-20">
-                      <h5 class="entry-title mt-0 pt-0"><a href="#">Sponsor a child today</a></h5>
-                      <p class="text-left mb-20 mt-15 font-13">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
-                      <a class="btn btn-flat btn-dark btn-theme-colored btn-sm pull-left" href="#">Read more</a>
-                      <ul class="list-inline entry-date pull-right font-12 mt-5">
-                        <li><a class="text-theme-colored" href="#">Admin |</a></li>
-                        <li><span class="text-theme-colored">Nov 13, 2015</span></li>
-                      </ul>
-                      <div class="clearfix"></div>
-                    </div>
-                  </article>
-                </div>
-                <div class="item">
-                  <article class="post clearfix maxwidth600 mb-sm-30">
-                    <div class="entry-header">
-                      <div class="post-thumb thumb"> <img src="images/blog/3.jpg" alt="" class="img-responsive img-fullwidth"> </div>
-                      <div class="entry-meta meta-absolute text-center pl-15 pr-15">
-                      <div class="display-table">
-                        <div class="display-table-cell">
-                          <ul>
-                            <li><a class="text-white" href="#"><i class="fa fa-thumbs-o-up"></i> 265 <br> Likes</a></li>
-                            <li class="mt-20"><a class="text-white" href="#"><i class="fa fa-comments-o"></i> 72 <br> comments</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                      </div>
-                    </div>
-                    <div class="entry-content border-1px p-20">
-                      <h5 class="entry-title mt-0 pt-0"><a href="#">Sponsor a child today</a></h5>
-                      <p class="text-left mb-20 mt-15 font-13">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
-                      <a class="btn btn-flat btn-dark btn-theme-colored btn-sm pull-left" href="#">Read more</a>
-                      <ul class="list-inline entry-date pull-right font-12 mt-5">
-                        <li><a class="text-theme-colored" href="#">Admin |</a></li>
-                        <li><span class="text-theme-colored">Nov 13, 2015</span></li>
-                      </ul>
-                      <div class="clearfix"></div>
-                    </div>
-                  </article>
-                </div>
+                    </article>
+                  </div>
+                @endforeach
+
+
               </div>
             </div>
           </div>
