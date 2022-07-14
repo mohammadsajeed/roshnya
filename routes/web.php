@@ -11,6 +11,7 @@ use App\Http\Livewire\Test;
 use App\Http\Controllers\SliderControler;
 use App\Http\Controllers\NewsController;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\volunteerController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -44,6 +45,9 @@ Route::get('/news_delete/{id}',[NewsController::class,'news_delete']);
 Route::get('/project',[ProjectController::class,'index']);
 Route::post('/add_project',[ProjectController::class,'add_project']);
 Route::get('/project_delete/{id}',[ProjectController::class,'project_delete']);
+Route::get('/volunteer',[volunteerController::class,'index']);
+Route::post('/add_volunteer',[volunteerController::class,'add_volunteer']);
+Route::get('/volunteer_delete/{id}',[volunteerController::class,'volunteer_delete']);
 
 
 // Route::get('/dashboard', function () {

@@ -45,7 +45,7 @@
                             <div class="col-sm-4">
                                 <label for="name">Date:</label>
                                 <input type="date" class="form-control"  name="date" placeholder=" Please type news Date" >
-                                @error('picture')
+                                @error('date')
                                 <p class="text-danger">{{$message}}</p>
                             @enderror
                             </div>
