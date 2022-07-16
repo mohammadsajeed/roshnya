@@ -16,13 +16,13 @@
                             <div class="tp-caption BigBold-Title tp-resizeme rs-parallaxlevel-0 text-uppercase" id="rs-1-layer-1" data-x="['left','left','left','left']" data-hoffset="['50','50','30','17']" data-y="['bottom','bottom','bottom','bottom']" data-voffset="['110','110','180','160']"
                                 data-fontsize="['105','100','70','60']" data-lineheight="['100','90','60','60']" data-width="['none','none','none','400']" data-height="none" data-whitespace="['nowrap','nowrap','nowrap','normal']" data-transform_idle="o:1;"
                                 data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:1500;e:Power3.easeInOut;" data-transform_out="y:[100%];s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" data-mask_in="x:0px;y:[100%];"
-                                data-mask_out="x:inherit;y:inherit;" data-start="500" data-splitin="none" data-splitout="none" data-basealign="slide" data-responsive_offset="on" style="z-index: 6; white-space: nowrap;">Child <span class="text-theme-colored">Care</span>
+                                data-mask_out="x:inherit;y:inherit;" data-start="500" data-splitin="none" data-splitout="none" data-basealign="slide" data-responsive_offset="on" style="z-index: 6; white-space: nowrap;">
                             </div>
 
                             <!-- LAYER NR. 2 -->
                             <div class="tp-caption BigBold-SubTitle tp-resizeme rs-parallaxlevel-0" id="rs-1-layer-2" data-x="['left','left','left','left']" data-hoffset="['55','55','33','20']" data-y="['bottom','bottom','bottom','bottom']" data-voffset="['40','1','74','58']" data-fontsize="['15','15','15','13']"
                                 data-lineheight="['24','24','24','20']" data-width="['410','410','410','280']" data-height="['60','100','100','100']" data-whitespace="normal" data-transform_idle="o:1;" data-transform_in="y:[100%];z:0;rX:0deg;rY:0;rZ:0;sX:1;sY:1;skX:0;skY:0;opacity:0;s:1500;e:Power3.easeInOut;"
-                                data-transform_out="y:50px;opacity:0;s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" data-start="650" data-splitin="none" data-splitout="none" data-basealign="slide" data-responsive_offset="on" style="z-index: 7; min-width: 410px; max-width: 410px; max-width: 60px; max-width: 60px; white-space: normal;">A Premium Revolution Slider Template for your Website Highlights & Multi-Media Content.
+                                data-transform_out="y:50px;opacity:0;s:1000;e:Power2.easeInOut;s:1000;e:Power2.easeInOut;" data-start="650" data-splitin="none" data-splitout="none" data-basealign="slide" data-responsive_offset="on" style="z-index: 7; min-width: 410px; max-width: 410px; max-width: 60px; max-width: 60px; white-space: normal;">{{$slider->description}}
                             </div>
 
                             <!-- LAYER NR. 3 -->
@@ -135,6 +135,7 @@
 </section>
 
     <!-- Section: featured project -->
+
     <section class="bg-lightest">
         <div class="container">
           <div class="row">
@@ -351,111 +352,39 @@
           <div class="section-title text-center">
             <div class="row">
               <div class="col-md-8 col-md-offset-2">
-                <h3 class="text-uppercase mt-0">Our Causes</h3>
+                <h3 class="text-uppercase mt-0">Our Current Projects </h3>
                 <div class="title-icon">
                   <i class="flaticon-charity-hand-holding-a-heart"></i>
                 </div>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem autem<br> voluptatem obcaecati!</p>
+                <p> Need some text here about proejct and explaination<br></p>
               </div>
             </div>
           </div>
           <div class="row mtli-row-clearfix">
+            @foreach ( $read_project as $project )
             <div class="col-sm-6 col-md-3 col-lg-3">
-              <div class="causes bg-lighter box-hover-effect effect1 maxwidth500 mb-sm-30">
-                <div class="thumb">
-                  <img class="img-fullwidth" alt="" src="images/project/1.jpg">
-                </div>
-                <div class="progress-item mt-0">
-                  <div class="progress mb-0">
-                    <div class="progress-bar" data-percent="84"></div>
+                <div class="causes bg-lighter box-hover-effect effect1 maxwidth500 mb-sm-30">
+                  <div class="thumb">
+                    <img class="img-fullwidth" alt="" src="images/{{$project->pic}}">
                   </div>
-                </div>
-                <div class="causes-details clearfix border-bottom p-15 pt-10">
-                  <h5><a href="#">Sponsor a child today</a></h5>
-                  <p>Lorem ipsum dolor sit amet, consect adipisicing elit. Praesent quos sit.</p>
-                  <ul class="list-inline clearfix mt-20">
-                    <li class="pull-left pr-0">Raised: $1890</li>
-                    <li class="text-theme-colored pull-right pr-0">Goal: $2500</li>
-                  </ul>
-                  <div class="mt-10">
-                   <a class="btn btn-dark btn-theme-colored btn-flat btn-sm pull-left mt-10" href="#">Donate</a>
-                   <div class="pull-right mt-15"><i class="fa fa-heart-o text-theme-colored"></i> 89 Donors</div>
+
+                  <div class="causes-details clearfix border-bottom p-15 pt-10">
+                    <h5><a href="#">{{$project->title}}</a></h5>
+                    <p>{!! $project->description !!}</p>
+                    <ul class="list-inline clearfix mt-20">
+                      <li class="pull-left pr-0">Raised: ${{$project->raised_money}}</li>
+                      <li class="text-theme-colored pull-right pr-0">Goal: ${{$project->raised_money}}</li>
+                    </ul>
+                    <div class="mt-10">
+                     <a class="btn btn-dark btn-theme-colored btn-flat btn-sm pull-left mt-10" href="#">Donate</a>
+                     <div class="pull-right mt-15"><i class="fa fa-heart-o text-theme-colored"></i> 89 Donors</div>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>
-            <div class="col-sm-6 col-md-3 col-lg-3">
-              <div class="causes bg-lighter box-hover-effect effect1 maxwidth500 mb-sm-30">
-                <div class="thumb">
-                  <img class="img-fullwidth" alt="" src="images/project/2.jpg">
-                </div>
-                <div class="progress-item mt-0">
-                  <div class="progress mb-0">
-                    <div class="progress-bar" data-percent="85"></div>
-                  </div>
-                </div>
-                <div class="causes-details clearfix border-bottom p-15 pt-10">
-                  <h5><a href="#">Sponsor a child today</a></h5>
-                  <p>Lorem ipsum dolor sit amet, consect adipisicing elit. Praesent quos sit.</p>
-                  <ul class="list-inline clearfix mt-20">
-                    <li class="pull-left pr-0">Raised: $1890</li>
-                    <li class="text-theme-colored pull-right pr-0">Goal: $2500</li>
-                  </ul>
-                  <div class="mt-10">
-                   <a class="btn btn-dark btn-theme-colored btn-flat btn-sm pull-left mt-10" href="#">Donate</a>
-                   <div class="pull-right mt-15"><i class="fa fa-heart-o text-theme-colored"></i> 89 Donors</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-6 col-md-3 col-lg-3">
-              <div class="causes bg-lighter box-hover-effect effect1 maxwidth500 mb-sm-30">
-                <div class="thumb">
-                  <img class="img-fullwidth" alt="" src="images/project/3.jpg">
-                </div>
-                <div class="progress-item mt-0">
-                  <div class="progress mb-0">
-                    <div class="progress-bar" data-percent="86"></div>
-                  </div>
-                </div>
-                <div class="causes-details clearfix border-bottom p-15 pt-10">
-                  <h5><a href="#">Sponsor a child today</a></h5>
-                  <p>Lorem ipsum dolor sit amet, consect adipisicing elit. Praesent quos sit.</p>
-                  <ul class="list-inline clearfix mt-20">
-                    <li class="pull-left pr-0">Raised: $1890</li>
-                    <li class="text-theme-colored pull-right pr-0">Goal: $2500</li>
-                  </ul>
-                  <div class="mt-10">
-                   <a class="btn btn-dark btn-theme-colored btn-flat btn-sm pull-left mt-10" href="#">Donate</a>
-                   <div class="pull-right mt-15"><i class="fa fa-heart-o text-theme-colored"></i> 89 Donors</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-6 col-md-3 col-lg-3">
-              <div class="causes bg-lighter box-hover-effect effect1 maxwidth500 mb-sm-30">
-                <div class="thumb">
-                  <img class="img-fullwidth" alt="" src="images/project/4.jpg">
-                </div>
-                <div class="progress-item mt-0">
-                  <div class="progress mb-0">
-                    <div class="progress-bar" data-percent="87"></div>
-                  </div>
-                </div>
-                <div class="causes-details clearfix border-bottom p-15 pt-10">
-                  <h5><a href="#">Sponsor a child today</a></h5>
-                  <p>Lorem ipsum dolor sit amet, consect adipisicing elit. Praesent quos sit.</p>
-                  <ul class="list-inline clearfix mt-20">
-                    <li class="pull-left pr-0">Raised: $1890</li>
-                    <li class="text-theme-colored pull-right pr-0">Goal: $2500</li>
-                  </ul>
-                  <div class="mt-10">
-                   <a class="btn btn-dark btn-theme-colored btn-flat btn-sm pull-left mt-10" href="#">Donate</a>
-                   <div class="pull-right mt-15"><i class="fa fa-heart-o text-theme-colored"></i> 89 Donors</div>
-                  </div>
-                </div>
-              </div>
-            </div>
+            @endforeach
+
+
           </div>
         </div>
       </section>
@@ -974,24 +903,13 @@
                   <div class="display-table-cell">
                     <div class="clients text-center pt-30 pb-20 bg-lightest-transparent">
                       <div class="row">
+
+                        @foreach ( $read_donor as $donor )
                         <div class="col-xs-6 col-sm-6 col-md-4">
-                          <img src="images/clients/1.png" alt="" width="100" class="mb-10">
-                        </div>
-                        <div class="col-xs-6 col-sm-6 col-md-4">
-                          <img src="images/clients/2.png" alt="" width="100" class="mb-10">
-                        </div>
-                        <div class="col-xs-6 col-sm-6 col-md-4">
-                          <img src="images/clients/3.png" alt="" width="100" class="mb-10">
-                        </div>
-                        <div class="col-xs-6 col-sm-6 col-md-4">
-                          <img src="images/clients/4.png" alt="" width="100" class="mb-10">
-                        </div>
-                        <div class="col-xs-6 col-sm-6 col-md-4">
-                          <img src="images/clients/5.png" alt="" width="100" class="mb-10">
-                        </div>
-                        <div class="col-xs-6 col-sm-6 col-md-4">
-                          <img src="images/clients/6.png" alt="" width="100" class="mb-10">
-                        </div>
+                            <img src="images/{{$donor->pic}}" alt="" width="100" class="mb-10">
+                          </div>
+                        @endforeach
+
                         <div class="clearfix"></div>
                       </div>
                     </div>
@@ -1035,41 +953,23 @@
             </div>
             <div class="col-md-5 bg-light-transparent">
               <div class="pt-50 pb-50 pl-20 pr-20">
-                <h4 class="text-uppercase line-bottom mt-0">Our Donors Say</h4>
+                <h4 class="text-uppercase line-bottom mt-0">Our Donors & Organizations</h4>
                 <div class="testimonial-carousel owl-nav-top">
-                  <div class="item">
-                    <div class="testimonial-wrapper text-center">
-                      <div class="thumb"><img class="img-circle" alt="" src="images/testimonials/1.jpg"></div>
-                      <div class="content pt-10">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum feugiat turpis nec leo pellentesque tincidunt adipiscing elit.</p>
-                        <i class="fa fa-quote-right font-36 mt-10 text-gray-lightgray"></i>
-                        <h5 class="author text-theme-colored mb-0">Catherine Grace</h5>
-                        <h6 class="title text-gray mt-0 mb-15">Designer</h6>
+                    @foreach ( $read_donor as $donor )
+                    <div class="item">
+                        <div class="testimonial-wrapper text-center">
+                          <div class="thumb"><img class="img-circle" alt="" src="images/{{$donor->pic}}"></div>
+                          <div class="content pt-10">
+                            <p>{{$donor->description}}</p>
+                            <i class="fa fa-quote-right font-36 mt-10 text-gray-lightgray"></i>
+                            <h5 class="author text-theme-colored mb-0">{{$donor->organization_name}}</h5>
+
+                          </div>
+                        </div>
                       </div>
-                    </div>
-                  </div>
-                  <div class="item">
-                    <div class="testimonial-wrapper text-center">
-                      <div class="thumb"><img class="img-circle" alt="" src="images/testimonials/2.jpg"></div>
-                      <div class="content pt-10">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum feugiat turpis nec leo pellentesque tincidunt adipiscing elit.</p>
-                        <i class="fa fa-quote-right font-36 mt-10 text-gray-lightgray"></i>
-                        <h5 class="author text-theme-colored mb-0">Catherine Grace</h5>
-                        <h6 class="title text-gray mt-0 mb-15">Designer</h6>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="item">
-                    <div class="testimonial-wrapper text-center">
-                      <div class="thumb"><img class="img-circle" alt="" src="images/testimonials/3.jpg"></div>
-                      <div class="content pt-10">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum feugiat turpis nec leo pellentesque tincidunt adipiscing elit.</p>
-                        <i class="fa fa-quote-right font-36 mt-10 text-gray-lightgray"></i>
-                        <h5 class="author text-theme-colored mb-0">Catherine Grace</h5>
-                        <h6 class="title text-gray mt-0 mb-15">Designer</h6>
-                      </div>
-                    </div>
-                  </div>
+                    @endforeach
+
+
                 </div>
               </div>
             </div>

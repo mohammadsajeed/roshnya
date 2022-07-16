@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\donorController;
 use App\Http\Livewire\Backend\Home;
 use App\Http\Livewire\Backend\Jobs;
 use App\Http\Livewire\Backend\Slider;
@@ -48,6 +49,9 @@ Route::get('/project_delete/{id}',[ProjectController::class,'project_delete']);
 Route::get('/volunteer',[volunteerController::class,'index']);
 Route::post('/add_volunteer',[volunteerController::class,'add_volunteer']);
 Route::get('/volunteer_delete/{id}',[volunteerController::class,'volunteer_delete']);
+Route::get('/donors',[donorController::class,'index']);
+Route::post('/add_donor',[donorController::class,'add_donor']);
+Route::get('/donor_delete/{id}',[donorController::class,'donor_delete']);
 
 
 // Route::get('/dashboard', function () {

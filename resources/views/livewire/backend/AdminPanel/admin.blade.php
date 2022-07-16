@@ -245,15 +245,17 @@
             <div class="scroll-sidebar">
                 <!-- Sidebar navigation-->
                 <nav class="sidebar-nav">
-                    <ul id="sidebarnav" class="pt-4">mdi-account-settings
+                    <ul id="sidebarnav" class="pt-4">
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/slider" aria-expanded="false"><i class="fas fa-camera"></i><span
                                     class="hide-menu">Slider Managment</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/news" aria-expanded="false"><i class="mdi mdi-newspaper"></i><span
                                     class="hide-menu">News Managment</span></a></li>
                                     <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/project" aria-expanded="false"><i class="mdi mdi-projector-screen"></i><span
                                         class="hide-menu">Projects Managment</span></a></li>
-                                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/volunteer" aria-expanded="false"><i class="mdi mdi-account-settings"></i><span
-                                            class="hide-menu">Volunteer Managment</span></a></li>
+                                    <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/volunteer" aria-expanded="false"><i class="mdi mdi-account-settings"></i><span
+                                        class="hide-menu">Volunteer Managment</span></a></li>
+                                    <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="/donors" aria-expanded="false"><i class="mdi mdi-cash-usd"></i><span
+                                        class="hide-menu"> Donors & Organizations </span></a></li>
 
                     </ul>
                 </nav>

@@ -476,7 +476,7 @@ ul.list.theme-colored.check li:before,
 .donation-form .form-group label,
 .title-icon [class^="flaticon-"]::after,
 .title-icon [class^="flaticon-"]::before {
-    color: #FFAB00;
+    color: #FF3333;
 }
 
 .star-rating span::before {
@@ -1043,20 +1043,20 @@ fieldset[disabled] .btn-theme-colored.focus {
 */
 
 .icon-theme-colored a {
-    color: #FFAB00;
+    color: #f0e9dc;
 }
 
 .icon-theme-colored.icon-bordered a {
-    border-color: #FFAB00;
+    border-color: #f0e9dc;
 }
 
 .icon-theme-colored.icon-bordered a:hover {
-    background-color: #FFAB00;
+    background-color: #f0e9dc;
     color: #fff;
 }
 
 .icon-theme-colored.icon-dark a {
-    background-color: #FFAB00;
+    background-color: #FF3333;
     color: #fff;
 }
 
